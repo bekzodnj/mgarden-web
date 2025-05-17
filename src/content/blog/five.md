@@ -5,7 +5,7 @@ description:
   '
 icon: "1"
 pubDate: "Jul 08 2022"
-heroImage: "/src/assets/adriana.jpg"
+heroImage: "/src/assets/harshal.jpg"
 ---
 
 This example is from https://markdown-it.github.io/
