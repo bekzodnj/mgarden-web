@@ -1,0 +1,21 @@
+---
+import Layout from "@/layouts/BlogPost.astro";
+const tags = ["Контакты", "maveran garden"];
+const description = `Контакты`;
+---
+
+<Layout
+  tags={tags}
+  icon="2"
+  title="Контакты"
+  description={description}
+  pubDate={new Date("May 17 2025")}
+  heroImage="/src/assets/harshal.jpg"
+>
+  <h2>Контакты</h2>
+  <p>📧 Email: info@maveran.uz</p>
+  <p>Телеграмм - https://t.me/maveran_garden</p>
+  <p>🌐 Instagram: @maverangarden</p>
+  <p>📱 Mob. / WhatsApp/Telegram: +998 99 796 05 74</p>
+  <p>📞 Звоните и пишите — мы всегда на связи!</p>
+</Layout>

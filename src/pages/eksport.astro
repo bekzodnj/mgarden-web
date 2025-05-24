@@ -1,0 +1,21 @@
+---
+import Layout from "@/layouts/BlogPost.astro";
+const tags = ["Экспорт", "maveran garden"];
+const description = `Экспорт`;
+---
+
+<Layout
+  tags={tags}
+  icon="beach"
+  title="Экспорт"
+  description={description}
+  pubDate={new Date("May 17 2025")}
+  heroImage="/src/assets/watermelon.jpg"
+>
+  <h2>Экспорт</h2>
+  <p>
+    Мы поставляем свежие овощи, зелень и бахчевые культуры из Узбекистана в
+    Европу, страны СНГ и Ближний Восток. Мы открыты для диалога и всегда
+    стремимся к долгосрочному сотрудничеству.
+  </p>
+</Layout>

@@ -3,30 +3,26 @@ import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/*.{jpeg,jpg,png,gif}"
+  "/src/assets/**/*.{jpeg,jpg,png,gif}"
 );
 ---
 
 <section class="py-20 flex md:flex-row flex-col px-4 md:px-0 gap-10 md:gap-0">
   <div class="flex flex-col gap-6 justify-start items-start md:w-1/2">
-    <h1 class="text-pblack">Hi, we are Maveran Garden</h1>
-
-    <p class="text-6xl font-bold">Wholesale Vegetables From Uzbekistan</p>
+    <h1 class="text-pblack">MAVERAN GARDEN</h1>
+    <p class="text-6xl font-bold">Экологически чистые овощи из Узбекистана</p>
     <p>
-      With Fresh Fruit Uzbekistan, It Becomes Very Easy To Buy Wholesale
-      Vegetables From Uzbekistan. As A Supplier Of Wholesale Vegetables From
-      Uzbekistan, we Can Export The Required Amount To Anywhere In The World At
-      Any Time Of The Year.
+      Экологически чистые овощи, бахчевые культуры, свежая и сушёная зелень,
+      сухофрукты и бобовые культуры из солнечного Узбекистана.
     </p>
     <a
-      rel="noopener noreferrer"
-      href="/about"
-      target="_blank"
+      href="/about-us"
       class="bg-pgreen px-5 py-3 border-1 border-black rounded-lg shadow-card hover:shadow-hover transition"
     >
-      Let's work together
+      Наши сервисы
     </a>
   </div>
+
   <div
     class="md:w-1/2 object-contain flex items-center justify-center p-10 group"
   >
@@ -54,10 +50,18 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
           <Image
             class="object-bottom absolute bottom-0 group-hover:scale-105 transition"
             src={images["/src/assets/green_tomato_hero.jpg"]()}
-            alt="Sorolla, photo wiki"
+            alt="Green apple image"
           />
         </div>
-      </div></a
+      </div>
+    </a>
     >
   </div>
 </section>
+<div class="text-center mb-8 px-20">
+  <h2 class="text-4xl font-bold mb-4">Добро пожаловать в MAVERAN GARDEN</h2>
+  <p class="text-pblack border inline-block w-1/2">
+    Наша компания с 2020 года поставляет свежие и качественные овощи, бахчевые
+    культуры, сухофрукты из Узбекистана в страны СНГ, Европы и Ближнего Востока.
+  </p>
+</div>
