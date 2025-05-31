@@ -79,7 +79,7 @@ const getRandomClass = () => {
             </div>
             <div class="flex flex-col gap-6" transition:animate="slide">
               <ul class="flex flex-col gap-2 pt-10 md:pt-0 items-start md:items-end">
-                <p class="md:hidden font-semibold">Related:</p>
+                <p class="font-semibold">Наш ассортимент продукции:</p>
                 {
                   posts.map((post) => {
                     return (
@@ -95,40 +95,35 @@ const getRandomClass = () => {
                 }
               </ul>
               <hr />
-              <p>Written by</p>
+              <p>Автор</p>
               <div class="flex -mt-4 gap-2">
                   <div class="bg-pgreen rounded-full w-12 h-12 aspect-square object-contain overflow-hidden ">
                     <Image src={images["/src/assets/harshal.jpg"]()} alt="Fran" />
                   </div>
                   <div>
-                  <h3>Joaquín Sorolla</h3>
-                  <p class="text-pblack">UX UI designer based<br>in Steve Jobs</p>
+                  <h3>Maveran Garden</h3>
+                  <p class="text-pblack">Transportation based<br>in Uzbekistan</p>
                 </div>
               </div>
               <hr/>
               <div>
-                <p>Contributors:</p>
-                <div class="flex items-center gap-6 text-xl">
-                  <a
-                    href="https://jramma.com"
+                <p>Контакты:</p>
+                <div class="flex items-center gap-2 text-xl">
+              
+                   <a
+                    href="https://t.me/maveran_garden"
                     target="_blank"
-                    class="py-1 pl-3 rounded-md border-1 border-black bg-ppink shadow-card hover:shadow-hover transition"
+                    class="border-1 p-1 border-black rounded-full shadow-card hover:shadow-hover transition"
                   >
-                    <Icon name="web" />
+                    <Icon name="telegram" class="" />
                   </a>
+
                   <a
-                    href="https://github.com/jramma"
+                    href="https://www.instagram.com/maveran_garden_"
                     target="_blank"
-                    class="border-1 p-1 border-black rounded-full bg-pblue shadow-card hover:shadow-hover transition"
+                    class="bg-slate-100 border-1 p-1 border-black rounded-full shadow-card hover:shadow-hover transition"
                   >
-                    <Icon name="github" />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/jramma/"
-                    target="_blank"
-                    class="border-1 p-1 border-black rounded-full bg-pgreen shadow-card hover:shadow-hover transition"
-                  >
-                    <Icon name="linkedin" />
+                    <Icon name="instagram-with-circle" />
                   </a>
                 </div>
               </div>
