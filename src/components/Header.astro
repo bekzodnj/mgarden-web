@@ -1,6 +1,9 @@
 ---
 import Link from "./HeaderLink.astro";
 import "../styles/hamburgers.css";
+
+import { Image } from "astro:assets";
+import Logo from "../assets/logoza-logo.png";
 ---
 
 <header>
@@ -9,8 +12,8 @@ import "../styles/hamburgers.css";
   >
     <div class="flex items-center justify-center p-4">
       <a href="/">
-        <img
-          src="../../src/assets/logoza-logo.png"
+        <Image
+          src={Logo}
           alt="Logo"
           class="h-16 w-auto hover:scale-105 transition-transform duration-300"
         />
