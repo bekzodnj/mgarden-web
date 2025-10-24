@@ -6,21 +6,21 @@ import { Image } from "astro:assets";
 import Logo from "../assets/logoza-logo.png";
 ---
 
-<header>
+<header class="bg-gray-50 border border-border-gray-200 shadow-sm sticky top-0 z-50">
   <nav
-    class="flex container mx-auto md:p-10 px-4 py-6 items-center justify-between"
+    class="flex container mx-auto px-4 items-center justify-between"
   >
     <div class="flex items-center justify-center p-4">
       <a href="/">
         <Image
           src={Logo}
           alt="Logo"
-          class="h-16 w-auto hover:scale-105 transition-transform duration-300"
+          class="h-16 w-auto will-change-transform hover:scale-110 transition-transform duration-300"
         />
       </a>
     </div>
 
-    <ul class="items-center md:gap-8 text-nowrap hidden md:flex">
+    <ul class="items-center md:gap-2 text-nowrap hidden md:flex">
       <li><Link href="/" text="Главная" style="primary" /></li>
       <li>
         <Link href="/about-us" text="О нашей компании" style="secondary" />

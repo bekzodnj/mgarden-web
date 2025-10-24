@@ -23,6 +23,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     >
       Наши сервисы
     </a>
+   
   </div>
 
   <div class="md:w-1/2 object-contain flex items-center justify-center p-10">
@@ -49,7 +50,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
         <div class="h-80 w-80 overflow-hidden relative sm:-mt-30 rounded-2xl">
           <Image
-            class="object-bottom absolute bottom-0 hover:scale-110 transition"
+            class="object-bottom will-change-transform absolute bottom-0 hover:scale-110 transition"
             src={images["/src/assets/green_tomato.jpg"]()}
             alt="Green apple image"
           />
@@ -60,7 +61,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   </div>
 </section>
 
-<div class="text-center mb-8 px-20">
+<div class="text-center mb-28 px-20">
   <h2 class="text-2xl sm:text-4xl font-bold mb-4">
     Добро пожаловать в MAVERAN GARDEN
   </h2>
