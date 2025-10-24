@@ -7,22 +7,18 @@ import Logo from "../assets/logoza-logo.png";
 ---
 
 <header
-  class="flex justify-center bg-gray-50 border-border-gray-200 py-4 shadow-sm sticky top-0 z-50 border"
+  class="flex flex-wrap bg-gray-50 border-border-gray-200 py-4 shadow-sm sticky top-0 z-50 border"
 >
-  <nav
-    class="flex container w-full px-4 md:px-16 flex-wrap items-center justify-between"
-  >
-    <div class="flex">
-      <a href="/">
-        <Image
-          src={Logo}
-          alt="Logo"
-          class="h-16 w-auto sm:h-16 will-change-transform hover:scale-110 lg:hidden xl:block transition-transform duration-300"
-        />
-      </a>
-    </div>
+  <nav class="flex container w-full px-4 md:px-16 items-center justify-between">
+    <a href="/" class="flex-shrink-0 block">
+      <Image
+        src={Logo}
+        alt="Logo"
+        class="h-16 w-auto will-change-transform hover:scale-110 lg:hidden xl:block transition-transform duration-300"
+      />
+    </a>
 
-    <ul class="items-center md:gap-2 text-nowrap hidden md:flex">
+    <ul class="text-nowrap hidden md:flex flex-wrap">
       <li><Link href="/" text="Главная" style="primary" /></li>
       <li>
         <Link href="/about-us" text="О нашей компании" style="secondary" />
