@@ -1,29 +1,41 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-
+import AnimatedGradientText from "./AnimatedGradientText.astro";
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/**/*.{jpeg,jpg,png,gif}"
 );
 ---
 
-<section class="py-20 flex md:flex-row flex-col px-4 md:px-0 gap-10 md:gap-0">
-  <div class="flex flex-col gap-6 justify-start items-start md:w-1/2">
+<section class="py-20 flex flex-col sm:flex-row md:px-0 gap-10 md:gap-3">
+  <div
+    class="flex flex-col gap-6 justify-start px-8 sm:px-0 items-start md:w-1/2"
+  >
     <h1 class="text-pblack">MAVERAN GARDEN</h1>
-    <p class="text-3xl sm:text-6xl font-bold">
-      Экологически чистые овощи из Узбекистана
+    <p class="text-4xl sm:text-6xl font-bold">
+      Экологически чистые <AnimatedGradientText text="овощи" /> из Узбекистана
     </p>
+
     <p>
       Экологически чистые овощи, бахчевые культуры, свежая и сушёная зелень,
       сухофрукты и бобовые культуры из солнечного Узбекистана.
     </p>
-    <a
-      href="/blog"
-      class="bg-pgreen px-5 py-3 border-1 border-black rounded-lg shadow-card hover:shadow-hover transition"
-    >
-      Наши сервисы
+    <a href="/blog">
+      <button
+        class="group relative inline-flex items-center gap-3 rounded-full bg-green-600 px-12 py-3 text-white text-lg font-bold transition-all duration-300 hover:bg-green-700"
+      >
+        <span
+          class="transition-all duration-300 transform group-hover:translate-x-1"
+        >
+          Наши сервисы
+        </span>
+        <span
+          class="absolute right-4 opacity-0 transform translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
+        >
+          🥬
+        </span>
+      </button>
     </a>
-   
   </div>
 
   <div class="md:w-1/2 object-contain flex items-center justify-center p-10">

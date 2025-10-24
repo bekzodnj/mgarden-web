@@ -6,16 +6,18 @@ import { Image } from "astro:assets";
 import Logo from "../assets/logoza-logo.png";
 ---
 
-<header class="bg-gray-50 border border-border-gray-200 shadow-sm sticky top-0 z-50">
+<header
+  class="flex justify-center bg-gray-50 border-border-gray-200 py-4 shadow-sm sticky top-0 z-50 border"
+>
   <nav
-    class="flex container mx-auto px-4 items-center justify-between"
+    class="flex container w-full px-4 md:px-16 flex-wrap items-center justify-between"
   >
-    <div class="flex items-center justify-center p-4">
+    <div class="flex">
       <a href="/">
         <Image
           src={Logo}
           alt="Logo"
-          class="h-16 w-auto will-change-transform hover:scale-110 transition-transform duration-300"
+          class="h-16 w-auto sm:h-16 will-change-transform hover:scale-110 lg:hidden xl:block transition-transform duration-300"
         />
       </a>
     </div>
@@ -50,6 +52,14 @@ import Logo from "../assets/logoza-logo.png";
         id="navigation"
         class="fixed top-0 left-0 w-full h-full bg-white transform -translate-y-full transition-transform duration-300 ease-in-out"
       >
+        <!-- Close button -->
+        <button
+          id="menu-close"
+          class="absolute top-8 right-8 text-5xl font-bold z-50"
+          aria-label="Close menu"
+        >
+          &times;
+        </button>
         <ul
           class="flex flex-col items-center justify-center h-full gap-8 text-nowrap"
         >
@@ -83,13 +93,20 @@ import Logo from "../assets/logoza-logo.png";
   function init() {
     const hamburger = document.querySelector(".hamburger");
     const menu = document.getElementById("navigation");
+    const closeBtn = document.getElementById("menu-close");
+
+    const toggleMenu = () => {
+      hamburger.classList.toggle("is-active");
+      menu.classList.toggle("-translate-y-full");
+      menu.classList.toggle("translate-y-0");
+    };
 
     if (hamburger && menu) {
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("is-active");
-        menu.classList.toggle("-translate-y-full");
-        menu.classList.toggle("translate-y-0");
-      });
+      hamburger.addEventListener("click", toggleMenu);
+    }
+
+    if (closeBtn && menu) {
+      closeBtn.addEventListener("click", toggleMenu);
     }
   }
   init();
