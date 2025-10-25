@@ -1,33 +1,52 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from "astro/types";
 
 type Type = "primary" | "secondary" | "tertiary";
-const { href = "", text = "", style = "primary", class: className, ...props } = Astro.props;
+const {
+  href = "",
+  text = "",
+  style = "primary",
+  class: className,
+  ...props
+} = Astro.props;
 
-interface Props extends HTMLAttributes<'a'> {
+interface Props extends HTMLAttributes<"a"> {
   text: string;
   href: string;
   style: Type;
 }
 
 const types: Record<Type, string> = {
-  primary: "hover:shadow-pblueHover",
-  secondary: "hover:shadow-pgreenHover",
-  tertiary: "hover:shadow-ppinkHover",
+  primary: "shadow-pblueHover",
+  secondary: "shadow-pgreenHover",
+  tertiary: "shadow-ppinkHover",
+};
+
+const types2: Record<Type, string> = {
+  primary: "shadow-pblueHover",
+  secondary: "shadow-pgreenHover",
+  tertiary: "shadow-ppinkHover",
 };
 
 const getType = (style: Type) => {
   return types[style] || "";
 };
 
-const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
 const subpath = pathname.match(/[^\/]+/g);
-const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
+const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
 ---
 
 <a
   href={href}
-  class:list={[className, `rounded-md border-black inline-block px-5 py-2 hover:border-1 ${getType(style)} transition ease-in-out`, { active: isActive }]}
+  class:list={[
+    className,
+    `rounded-md hover:border-gray-400 inline-block px-5 py-2 border-1 border-transparent hover:border-1 transition ease-in-out`,
+    { active: isActive },
+    { primary: style === "primary" && isActive },
+    { secondary: style === "secondary" && isActive },
+    { tertiary: style === "tertiary" && isActive },
+  ]}
   {...props}
 >
   {text}
@@ -40,5 +59,16 @@ const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
   }
   a.active {
     font-weight: bolder;
+    border: 1px solid black;
+    box-shadow: 10px 10px #96c7f2;
+  }
+  a.primary {
+    box-shadow: 10px 10px #96c7f2;
+  }
+  a.secondary {
+    box-shadow: 10px 10px #7ed957;
+  }
+  a.tertiary {
+    box-shadow: 10px 10px #f49ac2;
   }
 </style>
