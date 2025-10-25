@@ -21,7 +21,9 @@ const getRandomClass = () => {
 <section class="flex flex-col text-center">
   <h2 class="text-2xl sm:text-3xl font-bold">Наш ассортимент продукции</h2>
   <p class="text-pblack">Широкий выбор качественной продукции</p>
-  <ul class="flex flex-wrap justify-center gap-8 px-2 py-20  sm:w-[70%] mx-auto">
+  <ul
+    class="flex flex-wrap justify-center gap-8 py-20 w-full sm:w-[90%] mx-auto"
+  >
     {
       posts.map((post) => {
         const randomClass = getRandomClass();

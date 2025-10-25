@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import AnimatedGradientText from "./AnimatedGradientText.astro";
+import CinematicMarquee from "./CinematicMarquee.astro";
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/**/*.{jpeg,jpg,png,gif}"
 );
@@ -73,7 +74,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   </div>
 </section>
 
-<div class="text-center mb-28 px-20">
+<div class="text-center mb-8 px-20">
   <h2 class="text-2xl sm:text-4xl font-bold mb-4">
     Добро пожаловать в MAVERAN GARDEN
   </h2>
@@ -82,3 +83,5 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     культуры, сухофрукты из Узбекистана в страны СНГ, Европы и Ближнего Востока.
   </p>
 </div>
+<CinematicMarquee />
+<div class="mb-12"></div>
