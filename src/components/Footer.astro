@@ -3,9 +3,8 @@ const today = new Date();
 import { Icon } from "astro-icon/components";
 ---
 
-<footer
-  class="flex flex-col items-center container mx-auto p-10 text-center gap-10 pb-40"
->
+<footer class="flex flex-col items-center text-center gap-10 py-10 px-6">
+  <h2 class="text-3xl sm:text-6xl">MAVERAN GARDEN</h2>
   <p>
     &copy; {today.getFullYear()} Maveran Garden. All rights reserved.
     <span
@@ -33,3 +32,19 @@ import { Icon } from "astro-icon/components";
     </a>
   </div>
 </footer>
+
+<style>
+  footer {
+    background-color: #f9f9f9;
+  }
+
+  h2 {
+    color: #f9f9f9;
+    text-transform: capitalize;
+    background: linear-gradient(to right, #11998e, #38ef7d);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 4px transparent;
+    letter-spacing: 2px;
+  }
+</style>

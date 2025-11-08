@@ -2,9 +2,17 @@
 import CinematicMarquee from "./CinematicMarquee.astro";
 ---
 
-<section class="bg-[#fff] pt-20 pb-12">
-  <div class="text-center px-6 mb-4">
-    <h2 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold mb-4">
+<section class="bg-[#fff] pt-20 pb-12 relative">
+  <div class="px-6 mb-4 flex flex-col items-center">
+    <svg
+      class="vine-background hidden sm:block"
+      viewBox="0 0 1200 300"
+      preserveAspectRatio="none"
+    >
+      <path class="vine-path" d="M 0 150 Q 200 80, 400 140 T 800 160 T 1200 120"
+      ></path>
+    </svg>
+    <h2 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold mb-4 relative z-10">
       Добро пожаловать в <span id="maveran" class="text-black"
         >MAVERAN GARDEN</span
       >
@@ -31,7 +39,7 @@ import CinematicMarquee from "./CinematicMarquee.astro";
 
     animation: highlight linear forwards;
     animation-timeline: scroll();
-    animation-range: entry 15% cover 30%;
+    animation-range: cover 15% cover 35%;
   }
 
   @keyframes highlight {
@@ -44,15 +52,31 @@ import CinematicMarquee from "./CinematicMarquee.astro";
     }
   }
 
-  @keyframes appear {
-    from {
-      opacity: 0;
-      transform: scaleX(0);
-    }
+  .vine-background {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: 1;
+  }
 
+  .vine-path {
+    stroke: #22c55e;
+    stroke-width: 3;
+    fill: none;
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 3000;
+
+    animation: grow linear forwards;
+    animation-timeline: scroll();
+    animation-range: cover 20% cover 60%;
+  }
+
+  @keyframes grow {
     to {
-      opacity: 1;
-      transform: scaleX(1);
+      stroke-dashoffset: 0;
     }
   }
 </style>
