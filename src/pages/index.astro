@@ -5,7 +5,7 @@ import Footer from "@/components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Hero from "@/components/Hero.astro";
 import WhatIDo from "@/components/WhatIDo.astro";
-import CinematicMarquee from "@/components/CinematicMarquee.astro";
+import WelcomeSection from "@/components/WelcomeSection.astro";
 ---
 
 <!doctype html>
@@ -19,22 +19,7 @@ import CinematicMarquee from "@/components/CinematicMarquee.astro";
       <div class="container mx-auto md:px-28">
         <Hero />
       </div>
-      <section class="bg-[#fff] pt-20 pb-12">
-        <div class="text-center px-6 mb-4">
-          <h2 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold mb-4">
-            Добро пожаловать в <span class="text-black">MAVERAN GARDEN</span>
-          </h2>
-          <p
-            class="text-pblack inline-block w-full max-w-xl sm:w-3/4 px-4 py-2 leading-relaxed text-[clamp(1.2rem,2vw,1.5rem)] text-balance"
-          >
-            Наша компания с 2020 года поставляет свежие и качественные овощи,
-            бахчевые культуры, сухофрукты из Узбекистана в страны СНГ, Европы и
-            Ближнего Востока.
-          </p>
-        </div>
-        <CinematicMarquee />
-      </section>
-
+      <WelcomeSection />
       <div class="container mx-auto md:px-28 py-20">
         <WhatIDo />
       </div>

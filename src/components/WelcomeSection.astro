@@ -1,0 +1,58 @@
+---
+import CinematicMarquee from "./CinematicMarquee.astro";
+---
+
+<section class="bg-[#fff] pt-20 pb-12">
+  <div class="text-center px-6 mb-4">
+    <h2 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold mb-4">
+      Добро пожаловать в <span id="maveran" class="text-black"
+        >MAVERAN GARDEN</span
+      >
+    </h2>
+    <p
+      class="text-pblack inline-block w-full max-w-xl sm:w-3/4 px-4 py-2 leading-relaxed text-[clamp(1.2rem,2vw,1.5rem)] text-balance"
+    >
+      Наша компания с 2020года поставляет <span class="a px-1 py-1"
+        >свежие и качественные овощи, бахчевые культуры, сухофрукты
+      </span>из Узбекистана в страны СНГ, Европы и Ближнего Востока.
+    </p>
+  </div>
+  <CinematicMarquee />
+</section>
+
+<style>
+  .a {
+    view-timeline-name: --subject-reveal;
+    animation-timeline: --subject-reveal;
+    background-position: left center;
+    background-image: linear-gradient(rgb(135, 246, 187), rgb(18, 255, 128));
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+
+    animation: highlight linear forwards;
+    animation-timeline: scroll();
+    animation-range: entry 15% cover 30%;
+  }
+
+  @keyframes highlight {
+    from {
+      background-size: 0% 100%;
+    }
+
+    to {
+      background-size: 100% 100%;
+    }
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    to {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+</style>
