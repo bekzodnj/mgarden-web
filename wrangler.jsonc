@@ -1,0 +1,5 @@
+{
+  "name": "my-astro-app",
+  "compatibility_date": "2025-11-09", // Update to the day you deploy
+  "pages_build_output_dir": "./dist"
+}

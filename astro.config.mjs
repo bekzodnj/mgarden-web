@@ -1,16 +1,17 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
 import icon from "astro-icon";
 
-import netlify from "@astrojs/netlify";
+import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-  output:'server',
+  output: "static",
+  site: "https://maveran.bekzod.dev",
   integrations: [mdx(), sitemap(), tailwind(), icon()],
-  adapter: netlify(),
+  adapter: cloudflare(),
 });
